@@ -1,0 +1,15 @@
+#是否启动，默认启动
+enabled = true
+
+#watcher平台前缀节点
+#如果发现本机已经发送，但watcher平台无法看到，应该是节点配置有误
+prefix = "t.sp.fore"
+
+#watcher服务器地址，必须配置
+host = '1234.com'
+
+#watcher服务器端口，默认2013
+port = '8080'
+
+#打点记录发送频率, 默认1分钟
+rate = '2'

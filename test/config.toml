@@ -1,0 +1,76 @@
+#配置文件示例
+
+#捕获错误开关是否打开
+interceptError = true
+
+#错误页面, interceptError开关打开才有效
+[errorPage]
+#404
+404 = "error/404.html"
+
+#500
+500 = "500.html"
+
+
+#服务器
+[server]
+#服务器名称
+name = 'Sugar'
+
+#服务器版本
+version = '2.0'
+
+#监听端口
+port = 8080
+
+#日志
+[log]
+#是否启动，默认启动
+enabled = true
+
+#日志目录, 默认logs
+root = ''
+
+#日志名称，前缀名称，默认为app
+name = ''
+
+#日志级别，会记录大于设置level的日志，默认4
+#TRACE=1 DEBUG=2 INFO=3
+#WARN=4 ERROR=5 FATAL=6
+level = ''
+
+#日志滚动策略，默认是D
+#Y=年 M=月 D=日
+rolling = 'D'
+
+[watcher]
+#是否启动，默认启动
+enabled = false
+
+#watcher平台前缀节点
+#如果发现本机已经发送，但watcher平台无法看到，应该是节点配置有误
+prefix = ''
+
+#watcher服务器地址，必须配置
+host = ''
+
+#watcher服务器端口，默认2013
+port = ''
+
+#打点记录发送频率, 默认1分钟
+rate = ''
+
+#视图层
+[view]
+#根路径, 默认/views
+root = ''
+
+#解析引擎, 默认ejs，支持ejs、hbs、vue
+engine = ''
+
+#静态资源
+[static]
+#根路径
+root = ''
+
+#静态资源缓存相关配置

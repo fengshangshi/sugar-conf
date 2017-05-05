@@ -6,6 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengshangshi/sugar-conf.git"
+  },
   "author": "ss.feng",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengshangshi/sugar-conf/issues"
+  },
+  "homepage": "https://github.com/fengshangshi/sugar-conf#readme",
+  "dependencies": {
+    "sugar-toml": "0.0.4",
+    "sugar-type": "0.0.3"
+  }
 }
