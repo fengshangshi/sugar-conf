@@ -1,5 +1,5 @@
 /**
- * @file TOML配置文件组件
+ * @file sugar2.0-配置文件管理组件
  * @author ss.feng
  */
 'use strict'

@@ -6,5 +6,8 @@
 
 const Conf = require('.');
 
+let confWithIgnore = new Conf('./test', 'index');
+console.log(confWithIgnore.config);
+
 let conf = new Conf('./test');
 console.log(conf.config);
