@@ -1,5 +1,5 @@
 /**
- * @file 日志级别类
+ * @file 文件扫描器类
  * @author ss.feng
  */
 'use strict'
