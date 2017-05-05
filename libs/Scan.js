@@ -19,7 +19,7 @@ class Scan {
 
         this.path = path;
 
-        this.__files = {};
+        this.__files = new Map;
         this.__ext = options.ext || '*';
     }
 
@@ -40,7 +40,7 @@ class Scan {
                     let ext = path.parse(file).ext;
 
                     if (this.__ext === '*' || this.__extIncludes(ext)) {
-                        this.__files[file] = root;
+                        this.__files.set(file, root);
                     }
                 }
 

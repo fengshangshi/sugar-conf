@@ -23,54 +23,55 @@ class Conf {
         this.ignore = ignore || 'config';
     }
 
-    __files2map() {
-        let map = new Map();
+    __invertFiles() {
+        let map = new Map;
         let files = this.files;
 
-        Object.keys(files).forEach((i) => {
-            let name = path.parse(i).name;
+        files.forEach((value, key) => {
+            let name = path.parse(key).name;
 
             // 对同一个目录下的文件进行排序
-            if (map.has(files[i])) {
+            if (map.has(value)) {
                 if (name === this.ignore) {
                     // 如果是特殊文件，放在数组头部
-                    map.get(files[i]).unshift(i);
+                    map.get(value).unshift(key);
                 } else {
                     // 其他非特殊文件
-                    map.get(files[i]).push(i);
+                    map.get(value).push(key);
                 }
             } else {
-                map.set(files[i], [i]);
+                map.set(value, [key]);
             }
         });
 
         return map;
     }
 
-    __map2array(map) {
-        let array = [];
+    __sortWithPathDepth(files) {
+        let filesSorted = [];
         let flag = 0;
 
-        map.forEach((value, key) => {
+        files.forEach((value, key) => {
             // 计算路径深度
             let count = key.split(/\//).filter((k) => {
                 return k.length > 0;
             });
 
             // 数组合并前后的关系问题，通过flag对比
-            array = count > flag ? array.concat(value) : value.concat(array);
+            filesSorted = count > flag ?
+                filesSorted.concat(value) : value.concat(filesSorted);
 
             // 记录最新的路径深度
             flag = count;
         });
 
-        return array;
+        return filesSorted;
     }
 
 
-    __config() {
+    __fetchConfigure() {
         let config = {};
-        let files = this.__map2array(this.__files2map());
+        let files = this.__sortWithPathDepth(this.__invertFiles());
 
         files.forEach((file) => {
             let configure = {};
@@ -93,7 +94,7 @@ class Conf {
     }
 
     get config() {
-        return this.__config();
+        return this.__fetchConfigure();
     }
 }
 
