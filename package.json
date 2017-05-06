@@ -1,6 +1,6 @@
 {
   "name": "sugar-conf",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Sugar2.0框架的配置文件管理组件",
   "main": "index.js",
   "scripts": {
