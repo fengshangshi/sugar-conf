@@ -14,7 +14,7 @@ class Scan {
 
         let path = options.path;
         if (!fs.existsSync(path)) {
-            throw new Error('Scan path ' + path + ' is illegal');
+            throw new Error('Scan path "' + path + '" is illegal');
         }
 
         this.path = path;
