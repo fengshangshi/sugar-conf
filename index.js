@@ -5,7 +5,6 @@
 'use strict'
 
 const path = require('path');
-const type = require('sugar-type');
 const toml = require('sugar-toml');
 
 const Scan = require('./libs/Scan');
@@ -13,7 +12,6 @@ const Scan = require('./libs/Scan');
 
 class Conf {
     constructor(path, ignore) {
-        // 初始化扫描器，获得toml的文件列表
         const scan = new Scan({
             ext: '.toml',
             path: path,
