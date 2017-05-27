@@ -31,6 +31,6 @@ console.log(configure.ral.a); // 1
 不忽略的访问方式，需要显示的增加index节点：
 
 ```
-const config = new Conf('./conf');
+const configure = new Conf('./conf');
 console.log(configure.ral.index.a); // 1
 ```
