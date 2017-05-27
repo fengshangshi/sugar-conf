@@ -6,9 +6,7 @@
 
 const path = require('path');
 const toml = require('sugar-toml');
-
-const Scan = require('./libs/Scan');
-
+const Scan = require('sugar-scan');
 
 class Conf {
     constructor(path, ignore) {
